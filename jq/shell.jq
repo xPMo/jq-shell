@@ -37,7 +37,7 @@ def param(pfx):
 		] | join("\n")
 
 	elif type == "array" then
-		"set -- \(.[] | @sh)"
+		"set -- \([.[] | @sh] | join(" "))"
 
 	else
 		empty

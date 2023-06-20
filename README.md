@@ -18,6 +18,10 @@ jq -r 'import "shell" as sh; sh::param' << 'EOF'
   "my-int": 42,
   "my-float": 3.14
 }
+[
+  "what about",
+  "an array?"
+]
 EOF
 ```
 
@@ -27,4 +31,5 @@ typeset -a _myarray=('foo' 'bar' 'baz')
 typeset _mystring='string'
 typeset -i _myint=42
 [[ -v ZSH_ARGZERO ]] && typeset -F _myfloat=3.14
+set -- 'what about' 'an array?'
 ```
